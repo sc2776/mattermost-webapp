@@ -37,7 +37,7 @@ import {canUploadFiles} from 'utils/file_utils';
 import CreatePost from './create_post.jsx';
 
 function mapStateToProps() {
-    return (state) => {
+    return (state, ownProps) => {
         const config = getConfig(state);
         const currentChannel = getCurrentChannel(state) || {};
         const draft = getPostDraft(state, StoragePrefixes.DRAFT, currentChannel.id);
@@ -68,7 +68,7 @@ function mapStateToProps() {
             commentCountForPost: getCommentCountForPost(state, {post}),
             latestReplyablePostId,
             currentUsersLatestPost: getCurrentUsersLatestPost(state),
-            readOnlyChannel: !isCurrentUserSystemAdmin(state) && config.ExperimentalTownSquareIsReadOnly === 'true' && currentChannel.name === Constants.DEFAULT_CHANNEL,
+            readOnlyChannel: ownProps.readOnlyChannel || (!isCurrentUserSystemAdmin(state) && config.ExperimentalTownSquareIsReadOnly === 'true' && currentChannel.name === Constants.DEFAULT_CHANNEL),
             canUploadFiles: canUploadFiles(config),
             enableEmojiPicker,
             enableGifPicker,

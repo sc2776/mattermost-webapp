@@ -22,6 +22,18 @@ exports[`components/SearchResultsItem should match snapshot for DM 1`] = `
           }
         }
       />
+      <span
+        className="search-channel__archived"
+      >
+        <ArchiveIcon
+          className="icon icon__archive channel-header-archived-icon"
+        />
+        <FormattedMessage
+          defaultMessage="Archived"
+          id="search_item.channelArchived"
+          values={Object {}}
+        />
+      </span>
     </div>
     <div
       className="post__content"
@@ -120,6 +132,7 @@ exports[`components/SearchResultsItem should match snapshot for DM 1`] = `
               idCount={-1}
               idPrefix="searchpost"
               isFlagged={true}
+              isReadOnly={true}
               post={
                 Object {
                   "channel_id": "channel_id",
@@ -237,7 +250,20 @@ exports[`components/SearchResultsItem should match snapshot for channel 1`] = `
   >
     <div
       className="search-channel__name"
-    />
+    >
+      <span
+        className="search-channel__archived"
+      >
+        <ArchiveIcon
+          className="icon icon__archive channel-header-archived-icon"
+        />
+        <FormattedMessage
+          defaultMessage="Archived"
+          id="search_item.channelArchived"
+          values={Object {}}
+        />
+      </span>
+    </div>
     <div
       className="post__content"
     >
@@ -326,6 +352,7 @@ exports[`components/SearchResultsItem should match snapshot for channel 1`] = `
               idCount={-1}
               idPrefix="searchpost"
               isFlagged={true}
+              isReadOnly={true}
               post={
                 Object {
                   "channel_id": "channel_id",
@@ -443,7 +470,20 @@ exports[`components/SearchResultsItem should match snapshot for deleted message 
   >
     <div
       className="search-channel__name"
-    />
+    >
+      <span
+        className="search-channel__archived"
+      >
+        <ArchiveIcon
+          className="icon icon__archive channel-header-archived-icon"
+        />
+        <FormattedMessage
+          defaultMessage="Archived"
+          id="search_item.channelArchived"
+          values={Object {}}
+        />
+      </span>
+    </div>
     <div
       className="post__content"
     >
